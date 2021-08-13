@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <h1>Users</h1>
+  <%= link_to 'New User', new_user_path %>
+    <%= grid(@users_grid) do |g|
+      g.column name: "ID" do |user|
+        user.id
+      end
+
+      g.column  name: "First Name" do |user|
+        user.first_name
+      end
+
+      g.column name: "Last Name" do |user|
+        user.last_name
+      end
+
+      g.column name: "Created" do |user|
+        user.created_at
+      end
+
+      g.column do |user|
+        link_to('Show', user)
+      end
+
+      g.column do |user|
+        link_to('Edit', edit_user_path(user))
+      end
+
+      g.column do |user|
+        link_to('Destroy', user,  method: :delete, data: { confirm: 'Are you sure?' } )
+      end
+    end -%>
+</div>
+
+<br>
+<br>
+
+<button type="button" class="btn btn-outline-secondary" id="greet-user-button">Hello, World!</button>
+
+<br>
+<br>
+
+<button type="button" class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  Show tooltip on top
+</button>
