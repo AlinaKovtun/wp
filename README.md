@@ -1,2 +1,7 @@
 # wp
-test raols-webpacker app
+test rails-webpacker app
+
+
+yarn install
+
+rails s
